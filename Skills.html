@@ -32,7 +32,7 @@
                 <li class="nav-item"><a class="nav-link" href="Poetry.html">Poetry</a></li>
                 <li class="nav-item"><a class="nav-link" href="Contact.html">Contact Information</a></li>
             </ul>
-            <a class="resume btn btn-warning" href="https://docs.google.com/document/d/1mn1eNetuWI7vO4YYlXjGNv_hZwvM4GlTqqZtdAN6zBE/export?format=pdf">Download Resume</a>
+            <a class="resume btn btn-warning" id="resumeButton" href="https://docs.google.com/document/d/1mn1eNetuWI7vO4YYlXjGNv_hZwvM4GlTqqZtdAN6zBE/export?format=pdf">Download Resume - <span id="count">0</span></a>
         </div>
     </nav>
 
@@ -40,10 +40,20 @@
         <div class="row">
             <div class="col">
         <h2>Skills</h2>
-
         <p>Here is the toolkit i have built up across school and work.</p>
 
-        <div class="skills row">
+        <form id="skillForm" class="mb-4">
+            <label for="skillInputName" class="form-label">Skill Name</label>
+            <input type="text" id="skillInputName" class="form-control mb-2" placeholder="Enter a skill name" required>
+
+            <label for="skillInputDescription" class="form-label">Skill Description</label>
+            <input type="text" id="skillInputDescription" class="form-control mb-2" placeholder="Enter a skill description" required>
+
+            <button type="submit" class="btn btn-warning">Add Skill</button>
+        </form>
+
+
+        <div class="skills row" id="skillList">
             <div class="col-md-4">
                 <div class="skill card">
                     <div class="card-body">
@@ -153,6 +163,6 @@
             </div>
         </div>
     </footer>
-
+<script src="Script.js"></script>
 </body>
 </html>
