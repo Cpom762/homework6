@@ -115,7 +115,7 @@ if (projectList !== null) {
 
 let DownloadCount = 0;
 
-document.getElementsById("resumeButton").addEventListener("click", function countFunction() {
+document.querySelector(".resume").addEventListener("click", function countFunction() {
     DownloadCount++;
-    document.getElementById("DownloadCount").textContent = DownloadCount;
+    document.getElementById("count").textContent = DownloadCount;
 });
