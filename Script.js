@@ -113,5 +113,9 @@ if (projectList !== null) {
     }
 }
 
-DownloadCount = 0;
-document.getElementsByClassName("resume").addEventListener("click", )
+let DownloadCount = 0;
+
+document.getElementsById("resumeButton").addEventListener("click", function countFunction() {
+    DownloadCount++;
+    document.getElementById("DownloadCount").textContent = DownloadCount;
+});
