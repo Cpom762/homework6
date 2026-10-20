@@ -119,3 +119,92 @@ document.querySelector(".resume").addEventListener("click", function countFuncti
     DownloadCount++;
     document.getElementById("count").textContent = DownloadCount;
 });
+
+const experienceTable = document.getElementById("experienceTable");
+const educationTable = document.getElementById("educationTable");
+const jobTitles = [
+    "AVL and Spotlight Manager",
+    "Video Editor",
+    "Wendy's Team Trainer",
+    "CadenceSEO Team Member"
+];
+
+const companies = [
+    "Life Community Church",
+    "Home",
+    "Wendy's - Gilbert",
+    "CadenceSEO - Online"
+];
+
+const jobStartDates = [
+    "2021",
+    "2018",
+    "2024",
+    "2025"
+];
+
+const jobEndDates = [
+    "Present",
+    "Present",
+    "2026",
+    "Present"
+];
+
+const programs = [
+    "Software Engineering Degree",
+    "High School Diploma"
+];
+
+const schools = [
+    "Northern Arizona University",
+    "Leading Edge Academy Gilbert Early College"
+];
+
+const educationStartDates = [
+    "2025",
+    "2021"
+];
+
+const educationEndDates = [
+    "Present",
+    "2025"
+];
+
+function createTable(container, headers, dataArrays) {
+    if (container === null) {
+        return;
+    }
+    const table = document.createElement("table");
+    table.className = "table table-striped table-hover";
+
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+
+    for (let i = 0; i < headers.length; i++) {
+        const th = document.createElement("th");
+        th.textContent = headers[i];
+        headerRow.appendChild(th);
+    }
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+
+    for (let i = 0; i < dataArrays[0].length; i++) {
+        const row = document.createElement("tr");
+        for (let j = 0; j < dataArrays.length; j++) {
+            const cell = document.createElement("td");
+            cell.textContent = dataArrays[j][i];
+            row.appendChild(cell);
+        }
+        tbody.appendChild(row);
+    }
+    table.appendChild(tbody);
+    container.appendChild(table);
+}
+createTable( 
+    experienceTable, ["Role", "Company / Location", "Start Date", "End Date"], [jobTitles, companies, jobStartDates, jobEndDates]
+);
+createTable(
+    educationTable, ["Program", "School / University", "Start Date", "End Date"], [programs, schools, educationStartDates, educationEndDates]
+);
